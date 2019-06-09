@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="visao.FXMLTela2ListaPaisesDoContinenteController">
+   <children>
+      <TableView fx:id="tabelaPaises" layoutY="61.0" prefHeight="339.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="colunaNomePais" prefWidth="419.0" text="Países" />
+          <TableColumn fx:id="colunaQTDMontanhas" minWidth="0.0" prefWidth="180.0" text="QTD montanhas" />
+        </columns>
+      </TableView>
+      <Label layoutX="7.0" layoutY="7.0" prefHeight="54.0" prefWidth="393.0" text="Selecione um país, e mostraremos todas as suas montanhas." textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="buttonBuscarMontanhasDestePais" layoutX="416.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="167.0" text="Buscar" />
+   </children>
+</AnchorPane>

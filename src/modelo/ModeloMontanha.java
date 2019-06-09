@@ -1,0 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package modelo;
+
+/**
+ *
+ * @author kaio
+ */
+public class ModeloMontanha {
+    private String nome;
+    private String areaLocalizacao;
+    private String anoSubida;
+    private String lowestMountain;
+    private float elevacao;
+}
