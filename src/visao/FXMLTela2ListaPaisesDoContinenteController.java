@@ -1,7 +1,7 @@
 package visao;
 
 import com.sun.javaws.Main;
-import controle.ControleTela2;
+import controle.ControleTela3;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,7 +35,7 @@ public class FXMLTela2ListaPaisesDoContinenteController {
         // TODO
         //chama metodo que preenche a tabela
 
-        for (Object lista : new ControleTela2().buscaMontanhasDestePais("japan")) {
+        for (Object lista : new ControleTela3().buscaMontanhasDestePais("japan")) {
             //System.out.println(lista);
         }
     }

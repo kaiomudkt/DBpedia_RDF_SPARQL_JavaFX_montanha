@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import controle.ControleTela3;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class DBpedia_SPARQL_RDF_Montanha extends Application {
     
@@ -21,7 +23,10 @@ public class DBpedia_SPARQL_RDF_Montanha extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new ControleTela3().buscaMontanhasDestePais("japan");
+        ArrayList<modelo.ModeloMontanha> listaMont = (new ControleTela3().buscaMontanhasDestePais("japan")) ;
+        for(modelo.ModeloMontanha mont : listaMont){
+            System.out.println(mont.getNome());
+        }
         launch(args);
     }
     

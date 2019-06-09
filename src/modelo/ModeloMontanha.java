@@ -15,11 +15,14 @@ public class ModeloMontanha {
     private String anoSubida;
     private String lowestMountain;
     private double elevacao;
+    private String link;
 
-    public ModeloMontanha(String nome, double elevacao) {
+    public ModeloMontanha(String nome, String link) {
         this.nome = nome;
-        this.elevacao = elevacao;
+        this.link = link;
     }
+
+
 
     public String getNome() {
         return nome;
@@ -59,6 +62,14 @@ public class ModeloMontanha {
 
     public void setElevacao(double elevacao) {
         this.elevacao = elevacao;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
     
     

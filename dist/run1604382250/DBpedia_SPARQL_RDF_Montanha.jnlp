@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="DBpedia_SPARQL_RDF_Montanha.jnlp">
+  <information>
+    <title>DBpedia_SPARQL_RDF_Montanha</title>
+    <vendor>kaio</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="DBpedia_SPARQL_RDF_Montanha.jar" size="18863" download="eager" />
+    <jar href="lib/commons-beanutils-1.9.3.jar" size="246174" download="eager" />
+    <jar href="lib/commons-cli-1.4.jar" size="53820" download="eager" />
+    <jar href="lib/commons-codec-1.11.jar" size="335042" download="eager" />
+    <jar href="lib/commons-collections-3.2.2.jar" size="588337" download="eager" />
+    <jar href="lib/commons-collections4-4.2.jar" size="752798" download="eager" />
+    <jar href="lib/commons-io-2.6.jar" size="214788" download="eager" />
+    <jar href="lib/commons-lang-2.6.jar" size="284220" download="eager" />
+    <jar href="lib/commons-lang3-3.8.1.jar" size="501879" download="eager" />
+    <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib/commons-math3-3.5.jar" size="2038489" download="eager" />
+    <jar href="lib/commons-text-1.3.jar" size="182954" download="eager" />
+    <jar href="lib/guava-18.0.jar" size="2256213" download="eager" />
+    <jar href="lib/httpclient-4.5.6.jar" size="767140" download="eager" />
+    <jar href="lib/httpclient-cache-4.5.6.jar" size="161574" download="eager" />
+    <jar href="lib/httpcore-4.4.10.jar" size="326356" download="eager" />
+    <jar href="lib/httpmime-4.5.6.jar" size="41794" download="eager" />
+    <jar href="lib/jackson-annotations-2.9.8.jar" size="66894" download="eager" />
+    <jar href="lib/jackson-core-2.9.8.jar" size="325619" download="eager" />
+    <jar href="lib/jackson-databind-2.9.8.jar" size="1347236" download="eager" />
+    <jar href="lib/jcl-over-slf4j-1.7.25.jar" size="16515" download="eager" />
+    <jar href="lib/jline-3.6.2.jar" size="687044" download="eager" />
+    <jar href="lib/jsonld-java-0.12.3.jar" size="1658899" download="eager" />
+    <jar href="lib/jstl-1.2.jar" size="414240" download="eager" />
+    <jar href="lib/jts-core-1.15.1.jar" size="830323" download="eager" />
+    <jar href="lib/logback-classic-1.1.11.jar" size="309130" download="eager" />
+    <jar href="lib/logback-core-1.1.11.jar" size="475477" download="eager" />
+    <jar href="lib/lucene-analyzers-common-6.6.1.jar" size="1513793" download="eager" />
+    <jar href="lib/lucene-core-6.6.1.jar" size="2783509" download="eager" />
+    <jar href="lib/lucene-highlighter-6.6.1.jar" size="230593" download="eager" />
+    <jar href="lib/lucene-join-6.6.1.jar" size="146622" download="eager" />
+    <jar href="lib/lucene-memory-6.6.1.jar" size="46546" download="eager" />
+    <jar href="lib/lucene-misc-6.6.1.jar" size="165086" download="eager" />
+    <jar href="lib/lucene-queries-6.6.1.jar" size="237894" download="eager" />
+    <jar href="lib/lucene-queryparser-6.6.1.jar" size="404767" download="eager" />
+    <jar href="lib/lucene-sandbox-6.6.1.jar" size="169069" download="eager" />
+    <jar href="lib/lucene-spatial-extras-6.6.1.jar" size="196556" download="eager" />
+    <jar href="lib/lucene-spatial3d-6.6.1.jar" size="236947" download="eager" />
+    <jar href="lib/mapdb-1.0.8.jar" size="416533" download="eager" />
+    <jar href="lib/noggit-0.6.jar" size="26720" download="eager" />
+    <jar href="lib/opencsv-4.3.2.jar" size="165166" download="eager" />
+    <jar href="lib/rdf4j-client-2.5.2.jar" size="1810054" download="eager" />
+    <jar href="lib/rdf4j-config-2.5.2.jar" size="60229" download="eager" />
+    <jar href="lib/rdf4j-console-2.5.2.jar" size="93323" download="eager" />
+    <jar href="lib/rdf4j-http-client-2.5.2.jar" size="51346" download="eager" />
+    <jar href="lib/rdf4j-http-protocol-2.5.2.jar" size="32637" download="eager" />
+    <jar href="lib/rdf4j-http-server-spring-2.5.2.jar" size="142213" download="eager" />
+    <jar href="lib/rdf4j-lucene-spin-2.5.2.jar" size="20091" download="eager" />
+    <jar href="lib/rdf4j-model-2.5.2.jar" size="235413" download="eager" />
+    <jar href="lib/rdf4j-query-2.5.2.jar" size="60852" download="eager" />
+    <jar href="lib/rdf4j-queryalgebra-evaluation-2.5.2.jar" size="342744" download="eager" />
+    <jar href="lib/rdf4j-queryalgebra-geosparql-2.5.2.jar" size="52146" download="eager" />
+    <jar href="lib/rdf4j-queryalgebra-model-2.5.2.jar" size="157158" download="eager" />
+    <jar href="lib/rdf4j-queryparser-api-2.5.2.jar" size="23601" download="eager" />
+    <jar href="lib/rdf4j-queryparser-serql-2.5.2.jar" size="169331" download="eager" />
+    <jar href="lib/rdf4j-queryparser-sparql-2.5.2.jar" size="296681" download="eager" />
+    <jar href="lib/rdf4j-queryrender-2.5.2.jar" size="48878" download="eager" />
+    <jar href="lib/rdf4j-queryresultio-api-2.5.2.jar" size="31562" download="eager" />
+    <jar href="lib/rdf4j-queryresultio-binary-2.5.2.jar" size="14357" download="eager" />
+    <jar href="lib/rdf4j-queryresultio-sparqljson-2.5.2.jar" size="22407" download="eager" />
+    <jar href="lib/rdf4j-queryresultio-sparqlxml-2.5.2.jar" size="25575" download="eager" />
+    <jar href="lib/rdf4j-queryresultio-text-2.5.2.jar" size="29065" download="eager" />
+    <jar href="lib/rdf4j-repository-api-2.5.2.jar" size="75700" download="eager" />
+    <jar href="lib/rdf4j-repository-contextaware-2.5.2.jar" size="18792" download="eager" />
+    <jar href="lib/rdf4j-repository-dataset-2.5.2.jar" size="12503" download="eager" />
+    <jar href="lib/rdf4j-repository-event-2.5.2.jar" size="24791" download="eager" />
+    <jar href="lib/rdf4j-repository-http-2.5.2.jar" size="31067" download="eager" />
+    <jar href="lib/rdf4j-repository-manager-2.5.2.jar" size="43994" download="eager" />
+    <jar href="lib/rdf4j-repository-sail-2.5.2.jar" size="56805" download="eager" />
+    <jar href="lib/rdf4j-repository-sparql-2.5.2.jar" size="56389" download="eager" />
+    <jar href="lib/rdf4j-rio-api-2.5.2.jar" size="79110" download="eager" />
+    <jar href="lib/rdf4j-rio-binary-2.5.2.jar" size="12112" download="eager" />
+    <jar href="lib/rdf4j-rio-datatypes-2.5.2.jar" size="9063" download="eager" />
+    <jar href="lib/rdf4j-rio-jsonld-2.5.2.jar" size="21046" download="eager" />
+    <jar href="lib/rdf4j-rio-languages-2.5.2.jar" size="5027" download="eager" />
+    <jar href="lib/rdf4j-rio-n3-2.5.2.jar" size="5191" download="eager" />
+    <jar href="lib/rdf4j-rio-nquads-2.5.2.jar" size="7903" download="eager" />
+    <jar href="lib/rdf4j-rio-ntriples-2.5.2.jar" size="18929" download="eager" />
+    <jar href="lib/rdf4j-rio-rdfjson-2.5.2.jar" size="14896" download="eager" />
+    <jar href="lib/rdf4j-rio-rdfxml-2.5.2.jar" size="38627" download="eager" />
+    <jar href="lib/rdf4j-rio-trig-2.5.2.jar" size="9007" download="eager" />
+    <jar href="lib/rdf4j-rio-trix-2.5.2.jar" size="13714" download="eager" />
+    <jar href="lib/rdf4j-rio-turtle-2.5.2.jar" size="36338" download="eager" />
+    <jar href="lib/rdf4j-runtime-2.5.2.jar" size="2054" download="eager" />
+    <jar href="lib/rdf4j-sail-api-2.5.2.jar" size="65653" download="eager" />
+    <jar href="lib/rdf4j-sail-base-2.5.2.jar" size="64201" download="eager" />
+    <jar href="lib/rdf4j-sail-elasticsearch-2.5.2.jar" size="36236" download="eager" />
+    <jar href="lib/rdf4j-sail-federation-2.5.2.jar" size="100498" download="eager" />
+    <jar href="lib/rdf4j-sail-inferencer-2.5.2.jar" size="63164" download="eager" />
+    <jar href="lib/rdf4j-sail-lucene-2.5.2.jar" size="35503" download="eager" />
+    <jar href="lib/rdf4j-sail-lucene-api-2.5.2.jar" size="81486" download="eager" />
+    <jar href="lib/rdf4j-sail-memory-2.5.2.jar" size="60012" download="eager" />
+    <jar href="lib/rdf4j-sail-model-2.5.2.jar" size="9448" download="eager" />
+    <jar href="lib/rdf4j-sail-nativerdf-2.5.2.jar" size="141242" download="eager" />
+    <jar href="lib/rdf4j-sail-solr-2.5.2.jar" size="30107" download="eager" />
+    <jar href="lib/rdf4j-sail-spin-2.5.2.jar" size="61124" download="eager" />
+    <jar href="lib/rdf4j-sparqlbuilder-2.5.2.jar" size="95312" download="eager" />
+    <jar href="lib/rdf4j-spin-2.5.2.jar" size="255625" download="eager" />
+    <jar href="lib/rdf4j-storage-2.5.2.jar" size="1669102" download="eager" />
+    <jar href="lib/rdf4j-util-2.5.2.jar" size="110116" download="eager" />
+    <jar href="lib/slf4j-api-1.7.25.jar" size="41203" download="eager" />
+    <jar href="lib/solr-solrj-6.6.1.jar" size="1225258" download="eager" />
+    <jar href="lib/spatial4j-0.7.jar" size="204833" download="eager" />
+    <jar href="lib/spring-aop-4.3.21.RELEASE.jar" size="379904" download="eager" />
+    <jar href="lib/spring-beans-4.3.21.RELEASE.jar" size="763611" download="eager" />
+    <jar href="lib/spring-context-4.3.21.RELEASE.jar" size="1142952" download="eager" />
+    <jar href="lib/spring-core-4.3.21.RELEASE.jar" size="1130715" download="eager" />
+    <jar href="lib/spring-expression-4.3.21.RELEASE.jar" size="274952" download="eager" />
+    <jar href="lib/spring-web-4.3.21.RELEASE.jar" size="828657" download="eager" />
+    <jar href="lib/spring-webmvc-4.3.21.RELEASE.jar" size="920126" download="eager" />
+    <jar href="lib/standard-1.1.2.jar" size="393259" download="eager" />
+    <jar href="lib/stax2-api-3.1.4.jar" size="161867" download="eager" />
+    <jar href="lib/woodstox-core-asl-4.4.1.jar" size="486013" download="eager" />
+    <jar href="lib/zookeeper-3.4.10.jar" size="871369" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="DBpedia_SPARQL_RDF_Montanha" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="visao.DBpedia_SPARQL_RDF_Montanha"  name="DBpedia_SPARQL_RDF_Montanha" />
+  <update check="always"/>
+</jnlp>

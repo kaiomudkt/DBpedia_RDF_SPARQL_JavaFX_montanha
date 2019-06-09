@@ -65,8 +65,6 @@ public class ObjetoDeAcessoAosDados {
      * @return
      */
     public List<BindingSet> buscaMontanhasDestePais(String pais) {
-        System.out.println("ENTREU NO MÉTODO buscaMontanhasDestePais(String pais)");
-
         Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
@@ -82,7 +80,6 @@ public class ObjetoDeAcessoAosDados {
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {
-                System.out.println("DEU CERTO DEU CERTO DEU CERTO DEU CERTO DEU CERTO ");
                 return QueryResults.asList(result);
             }
         } finally {
