@@ -1,25 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package visao;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
-/**
- * FXML Controller class
- *
- * @author kaio
- */
-public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable {
+public class FXMLTela3ListaDeMontanhasDoPaisController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
+    @FXML
+    private Button buttonBuscar;
+
+    @FXML
+    private TableColumn<?, ?> columnLocalizacao;
+
+    @FXML
+    private TableView<?> tabelaMontanhas;
+
+    @FXML
+    private TableColumn<?, ?> columnMontanha;
+
+    @FXML
+    private TableColumn<?, ?> columnElevacao;
+
+
+
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    

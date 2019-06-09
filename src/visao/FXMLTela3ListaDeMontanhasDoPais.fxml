@@ -6,6 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela3ListaDeMontanhasDoPaisController">
-    
+<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela3ListaDeMontanhasDoPaisController">
+   <children>
+      <TableView fx:id="tabelaMontanhas" layoutX="-2.0" layoutY="75.0" prefHeight="500.0" prefWidth="782.0">
+        <columns>
+          <TableColumn fx:id="columnMontanha" prefWidth="290.0" text="Montanha" />
+          <TableColumn fx:id="columnElevacao" prefWidth="135.0" text="Elevacao" />
+            <TableColumn fx:id="columnLocalizacao" prefWidth="356.0" text="Localização" />
+        </columns>
+      </TableView>
+      <Label layoutX="17.0" layoutY="6.0" prefHeight="69.0" prefWidth="425.0" text="Selecione a montanha que deseja ver a comparação de sua elevação e o desvio padrão da elevação das outras montanhas" wrapText="true" />
+      <Button fx:id="buttonBuscar" layoutX="504.0" layoutY="28.0" mnemonicParsing="false" text="Buscar" />
+   </children>
 </AnchorPane>
