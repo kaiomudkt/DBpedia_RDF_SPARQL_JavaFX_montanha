@@ -16,4 +16,44 @@ public class ModeloPais {
     private int qtdMontanhas;
     private String continente;
     private ArrayList listaMontanhas;
+
+    public ModeloPais(String nome) {
+        this.nome = nome;
+    }
+    
+    
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getQtdMontanhas() {
+        return qtdMontanhas;
+    }
+
+    public void setQtdMontanhas(int qtdMontanhas) {
+        this.qtdMontanhas = qtdMontanhas;
+    }
+
+    public String getContinente() {
+        return continente;
+    }
+
+    public void setContinente(String continente) {
+        this.continente = continente;
+    }
+
+    public ArrayList getListaMontanhas() {
+        return listaMontanhas;
+    }
+
+    public void setListaMontanhas(ArrayList listaMontanhas) {
+        this.listaMontanhas = listaMontanhas;
+    }
+    
+    
 }

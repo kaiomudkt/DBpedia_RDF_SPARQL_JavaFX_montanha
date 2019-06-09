@@ -65,6 +65,8 @@ public class ObjetoDeAcessoAosDados {
      * @return
      */
     public List<BindingSet> buscaMontanhasDestePais(String pais) {
+        System.out.println("ENTREU NO MÉTODO buscaMontanhasDestePais(String pais)");
+
         Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
@@ -75,7 +77,8 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:mountainRange ?Lugar .";
-            queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/Japan> .";
+            queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/Japan> .";//static
+            //queryString += " ?Lugar  dbo:country "+pais+" .";//dinamico
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {

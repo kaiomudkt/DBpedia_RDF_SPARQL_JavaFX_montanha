@@ -14,5 +14,54 @@ public class ModeloMontanha {
     private String areaLocalizacao;
     private String anoSubida;
     private String lowestMountain;
-    private float elevacao;
+    private double elevacao;
+
+    public ModeloMontanha(String nome, double elevacao) {
+        this.nome = nome;
+        this.elevacao = elevacao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getAreaLocalizacao() {
+        return areaLocalizacao;
+    }
+
+    public void setAreaLocalizacao(String areaLocalizacao) {
+        this.areaLocalizacao = areaLocalizacao;
+    }
+
+    public String getAnoSubida() {
+        return anoSubida;
+    }
+
+    public void setAnoSubida(String anoSubida) {
+        this.anoSubida = anoSubida;
+    }
+
+    public String getLowestMountain() {
+        return lowestMountain;
+    }
+
+    public void setLowestMountain(String lowestMountain) {
+        this.lowestMountain = lowestMountain;
+    }
+
+    public double getElevacao() {
+        return elevacao;
+    }
+
+    public void setElevacao(double elevacao) {
+        this.elevacao = elevacao;
+    }
+    
+    
+    
+    
 }

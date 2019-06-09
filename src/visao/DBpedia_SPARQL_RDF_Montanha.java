@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import controle.ControleTela3;
 
 public class DBpedia_SPARQL_RDF_Montanha extends Application {
     
@@ -20,6 +21,7 @@ public class DBpedia_SPARQL_RDF_Montanha extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        new ControleTela3().buscaMontanhasDestePais("japan");
         launch(args);
     }
     

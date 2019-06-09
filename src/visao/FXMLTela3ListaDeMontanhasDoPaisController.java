@@ -15,8 +15,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import controle.ControleTela3;
+import modelo.ModeloMontanha;
 
 public class FXMLTela3ListaDeMontanhasDoPaisController {
+
+    ControleTela3 controle;
 
     @FXML
     private Button buttonBuscar;
@@ -32,11 +36,23 @@ public class FXMLTela3ListaDeMontanhasDoPaisController {
 
     @FXML
     private TableColumn<?, ?> columnElevacao;
-
+/**
+ * método acionado pelo o evento do clique no botão "buttonBuscar",
+ * pega o item selecionado no 
+ * 
+ * 
+ * @param event 
+ */
     @FXML
     void buttonTela4DesvioPadrao(ActionEvent event) {
-        
-            //chama a quarta tela
+        //pega conteudo selecionado na tabela
+        try{
+        ModeloMontanha montanha = (ModeloMontanha) tabelaMontanhas.getSelectionModel().getSelectedItem();
+        System.out.println(montanha.getNome());
+        }catch(Exception e){
+            System.out.println("OBJETO NULO, SELECIONA ALGUM ITEM DA TABELA");
+        }
+        //chama a quarta tela
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -53,6 +69,8 @@ public class FXMLTela3ListaDeMontanhasDoPaisController {
 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+
+        //chama metodo que inicializar toda a tabela
+    }
+
 }
