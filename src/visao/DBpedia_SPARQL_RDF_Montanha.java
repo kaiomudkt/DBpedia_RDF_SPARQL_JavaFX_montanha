@@ -10,11 +10,8 @@ public class DBpedia_SPARQL_RDF_Montanha extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-
         Parent root = FXMLLoader.load(getClass().getResource("FXMLTela1Continentes.fxml"));
-        
         Scene scene = new Scene(root);
-        
         stage.setScene(scene);
         stage.show();
     }

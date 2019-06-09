@@ -16,6 +16,6 @@
         </columns>
       </TableView>
       <Label layoutX="17.0" layoutY="6.0" prefHeight="69.0" prefWidth="425.0" text="Selecione a montanha que deseja ver a comparação de sua elevação e o desvio padrão da elevação das outras montanhas" wrapText="true" />
-      <Button fx:id="buttonBuscar" layoutX="504.0" layoutY="28.0" mnemonicParsing="false" text="Buscar" />
+      <Button fx:id="buttonBuscar" layoutX="504.0" layoutY="28.0" mnemonicParsing="false" onAction="#buttonTela4DesvioPadrao" text="Buscar" />
    </children>
 </AnchorPane>

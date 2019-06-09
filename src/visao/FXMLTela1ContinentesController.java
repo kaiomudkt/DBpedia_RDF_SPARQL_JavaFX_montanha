@@ -1,5 +1,6 @@
 package visao;
 
+import com.sun.javaws.Main;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FXMLTela1ContinentesController {
 
@@ -41,10 +44,20 @@ public class FXMLTela1ContinentesController {
         //inicia a variavel static (paisSelecionado)
         paisSelecionado = (RadioButton) grupoRadioContinentes.getSelectedToggle();//pega o radioButton selecionado
         System.out.println(paisSelecionado.getText());
-       //fecha essa tela1 atual
-        //chama a segunda tela2
-        //Parent root = FXMLLoader.load(getClass().getResource("FXMLTela2ListaPaisesDoContinente.fxml"));
 
+        //chama a segunda tela2
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("FXMLTela2ListaPaisesDoContinente.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+       //fecha essa tela1 atual
+        buscarContinente.getScene().getWindow().hide();
     }
     
 }

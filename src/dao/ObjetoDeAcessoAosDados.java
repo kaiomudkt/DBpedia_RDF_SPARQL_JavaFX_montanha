@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.util.List;
@@ -17,17 +12,14 @@ import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.sparql.SPARQLRepository;
 
-/**
- *
- * @author kaio
- */
 public class ObjetoDeAcessoAosDados {
+
     /**
- * Essa consulta retorna uma lista contendo todas 
- * as montanhas e suas determinadas: 
- * Área Localizada, Elevações, Ano de Ascensão.
+     * Essa consulta retorna uma lista contendo todas as montanhas e suas
+     * determinadas: Área Localizada, Elevações, Ano de Ascensão.
+     *
      * @return QueryResults.asList(result)
- */
+     */
     public List<BindingSet> consultaListaMontanhasDoMundo() {
         Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
         repo.init();
@@ -47,9 +39,8 @@ public class ObjetoDeAcessoAosDados {
             repo.shutDown();
         }
     }
-    
-    
-       /**
+
+    /**
      * Retorna string com lista de prefixos comuns.
      *
      * @return
@@ -67,12 +58,34 @@ public class ObjetoDeAcessoAosDados {
     }
 
     /**
-     * método receberá uma String pais,
-     * e pesquisara todas as montanhas deste pais
+     * método receberá uma String pais, e pesquisara todas as montanhas deste
+     * pais
+     *
      * @param pais
-     * @return 
+     * @return
      */
-    public static List<BindingSet> buscaMontanhasDestePais(String pais){
-        return null;
+    public List<BindingSet> buscaMontanhasDestePais(String pais) {
+        Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
+        repo.init();
+        try (RepositoryConnection conn = repo.getConnection()) {
+            String queryString = getPrefixes();
+            queryString += "SELECT DISTINCT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida ?Lugar WHERE {";
+            queryString += " ?Montanha rdf:type dbo:Mountain .";
+            queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
+            queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
+            queryString += " ?Montanha dbo:elevation ?Elevacao .";
+            queryString += " ?Montanha dbo:mountainRange ?Lugar .";
+            queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/Japan> .";
+            queryString += "}";
+            TupleQuery query = conn.prepareTupleQuery(queryString);
+            try (TupleQueryResult result = query.evaluate()) {
+                System.out.println("DEU CERTO DEU CERTO DEU CERTO DEU CERTO DEU CERTO ");
+                return QueryResults.asList(result);
+            }
+        } finally {
+            repo.shutDown();
+        }
     }
-}
+    
+    
+}//fim 
