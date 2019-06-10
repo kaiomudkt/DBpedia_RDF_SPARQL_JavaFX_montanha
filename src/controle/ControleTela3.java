@@ -34,11 +34,10 @@ public class ControleTela3 {
         ArrayList<ModeloMontanha> lista = new ArrayList<>();
         for (BindingSet bs : dao.buscaMontanhasDestePais(pais)) {
             String nomeMontanha = ((IRI) bs.getValue("Montanha")).getLocalName();//retorna o nome
-            //double elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
+            double elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
             String linkMontanha = bs.getValue("Montanha").stringValue();//retorna o link da montanha
-            //double elevacao = ((double)bs.getValue("Elevacao").stringValue());
             try{
-                lista.add(new ModeloMontanha(nomeMontanha, linkMontanha));
+                lista.add(new ModeloMontanha(nomeMontanha, elevacao, linkMontanha));
             }catch(Exception e){
                 System.out.println("Deu errado na inserção da lista");
             }

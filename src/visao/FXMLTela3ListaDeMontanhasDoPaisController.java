@@ -16,9 +16,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import controle.ControleTela3;
+import java.util.ArrayList;
+import javafx.fxml.Initializable;
 import modelo.ModeloMontanha;
 
-public class FXMLTela3ListaDeMontanhasDoPaisController {
+public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable{
 
     ControleTela3 controle;
 
@@ -36,20 +38,21 @@ public class FXMLTela3ListaDeMontanhasDoPaisController {
 
     @FXML
     private TableColumn<?, ?> columnElevacao;
-/**
- * método acionado pelo o evento do clique no botão "buttonBuscar",
- * pega o item selecionado no 
- * 
- * 
- * @param event 
- */
+
+    /**
+     * método acionado pelo o evento do clique no botão "buttonBuscar", pega o
+     * item selecionado no
+     *
+     *
+     * @param event
+     */
     @FXML
     void buttonTela4DesvioPadrao(ActionEvent event) {
         //pega conteudo selecionado na tabela
-        try{
-        ModeloMontanha montanha = (ModeloMontanha) tabelaMontanhas.getSelectionModel().getSelectedItem();
-        System.out.println(montanha.getNome());
-        }catch(Exception e){
+        try {
+            ModeloMontanha montanha = (ModeloMontanha) tabelaMontanhas.getSelectionModel().getSelectedItem();
+            System.out.println(montanha.getNome());
+        } catch (Exception e) {
             System.out.println("OBJETO NULO, SELECIONA ALGUM ITEM DA TABELA");
         }
         //chama a quarta tela
@@ -66,10 +69,16 @@ public class FXMLTela3ListaDeMontanhasDoPaisController {
         //fecha essa tela3 atual
         buttonBuscar.getScene().getWindow().hide();
     }
-
+    
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
+        System.out.println("##############");
+        System.out.println("##############");
+        ArrayList<modelo.ModeloMontanha> listaMont = (new ControleTela3().buscaMontanhasDestePais("japan"));
+        for (modelo.ModeloMontanha mont : listaMont) {
+            System.out.println(mont.getNome());
+        }
         //chama metodo que inicializar toda a tabela
     }
 

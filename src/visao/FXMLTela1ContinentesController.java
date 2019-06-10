@@ -2,6 +2,8 @@ package visao;
 
 import com.sun.javaws.Main;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,8 +14,9 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.Initializable;
 
-public class FXMLTela1ContinentesController {
+public class FXMLTela1ContinentesController implements Initializable{
 
     @FXML
     private ToggleGroup grupoRadioContinentes;
@@ -58,6 +61,11 @@ public class FXMLTela1ContinentesController {
         stage.show();
        //fecha essa tela1 atual
         buscarContinente.getScene().getWindow().hide();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
     
 }

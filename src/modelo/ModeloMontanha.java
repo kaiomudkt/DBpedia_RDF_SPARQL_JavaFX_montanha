@@ -22,6 +22,22 @@ public class ModeloMontanha {
         this.link = link;
     }
 
+    public ModeloMontanha(String nome, double elevacao, String link) {
+        this.nome = nome;
+        this.elevacao = elevacao;
+        this.link = link;
+    }
+
+    public ModeloMontanha(String nome, String areaLocalizacao, String anoSubida, String lowestMountain, double elevacao, String link) {
+        this.nome = nome;
+        this.areaLocalizacao = areaLocalizacao;
+        this.anoSubida = anoSubida;
+        this.lowestMountain = lowestMountain;
+        this.elevacao = elevacao;
+        this.link = link;
+    }
+    
+
 
 
     public String getNome() {
