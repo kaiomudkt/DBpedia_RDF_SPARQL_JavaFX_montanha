@@ -5,19 +5,9 @@
  */
 package controle;
 
-import com.sun.javaws.Main;
-import java.util.LinkedList;
 import modelo.ModeloMontanha;
 import dao.ObjetoDeAcessoAosDados;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.query.BindingSet;

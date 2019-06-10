@@ -105,5 +105,29 @@ public class ObjetoDeAcessoAosDados {
         }
     }
     
+    /**
+     * cria uma lista de todas as montanhas de um continente
+     * @return 
+     */
+    public List<BindingSet> consultaListaMontanhasDeDeterminadoContinente(String continente) {
+        Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
+        repo.init();
+        try (RepositoryConnection conn = repo.getConnection()) {
+            String queryString = getPrefixes();
+            queryString += "SELECT DISTINCT ?Montanha ?Elevacao ?Pais ?Continente WHERE {";
+            queryString += " ?Montanha rdf:type dbo:Mountain .";
+            queryString += " ?Montanha dbo:elevation ?Elevacao .";
+            queryString += " ?Montanha dbo:locatedInArea ?Pais.";
+            queryString += " ?Continente skos:broader dbc:Countries_in_Asia.";
+            queryString += "}";
+            TupleQuery query = conn.prepareTupleQuery(queryString);
+            try (TupleQueryResult result = query.evaluate()) {
+                return QueryResults.asList(result);
+            }
+        } finally {
+            repo.shutDown();
+        }
+    }
+    
     
 }//fim 

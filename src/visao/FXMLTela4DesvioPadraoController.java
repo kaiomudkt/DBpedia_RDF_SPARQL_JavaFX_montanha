@@ -1,6 +1,7 @@
 package visao;
 
 import com.sun.javaws.Main;
+import controle.ControleTela4;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,12 +14,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class FXMLTela4DesvioPadraoController implements Initializable{
 
     @FXML
+    private Label labelValorDesvioPadrao;
+
+    @FXML
+    private Label labelElevacaoMontEscolhido;
+
+    @FXML
+    private Label labelNomeMontanha;
+
+    @FXML
+    private Label labelNomeContinente;
+
+    @FXML
     private Button buttonVolta;
+
+ 
 
     @FXML
     void buttonVoltaAcao(ActionEvent event) {
@@ -39,6 +55,12 @@ public class FXMLTela4DesvioPadraoController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ControleTela4 controle = new ControleTela4();
+        
+        String desvioP = String.valueOf(controle.desvioPadrao("asia"));
+        labelValorDesvioPadrao.setText(desvioP);
+        //TODO
+        labelNomeContinente.setText("Asia");
     }
 
 }

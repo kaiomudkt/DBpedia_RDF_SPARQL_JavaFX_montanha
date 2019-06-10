@@ -8,10 +8,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="392.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela4DesvioPadraoController">
    <children>
-      <Label layoutX="36.0" layoutY="54.0" prefHeight="30.0" prefWidth="226.0" text="Desvio Padrão (continente)" wrapText="true" />
-      <Label layoutX="262.0" layoutY="62.0" text="(Valor desvio)" />
-      <Label layoutX="257.0" layoutY="121.0" text="Elevação" />
-      <Label layoutX="41.0" layoutY="121.0" text="Nome Montanha" />
+      <Label fx:id="labelNomeContinente" layoutX="14.0" layoutY="43.0" prefHeight="30.0" prefWidth="108.0" text="(continente)" wrapText="true" />
+      <Label fx:id="labelValorDesvioPadrao" layoutX="270.0" layoutY="51.0" text="(Valor desvio)" />
+      <Label fx:id="labelElevacaoMontEscolhido" layoutX="160.0" layoutY="129.0" text="Elevação" />
+      <Label fx:id="labelNomeMontanha" layoutX="14.0" layoutY="129.0" text="Nome Montanha" />
       <Button fx:id="buttonVolta" layoutX="130.0" layoutY="268.0" mnemonicParsing="false" onAction="#buttonVoltaAcao" text="Voltar a primeira tela" />
+      <Label layoutX="143.0" layoutY="51.0" text="Desvio padrao" />
    </children>
 </AnchorPane>
