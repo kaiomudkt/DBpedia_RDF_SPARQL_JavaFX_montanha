@@ -39,23 +39,22 @@ public class ControleTela3 {
      * recebe uma lista do tipo (List<BindingSet>) e transforma em uma
      * (linkedList)
      */
-    public ArrayList<ModeloMontanha> buscaMontanhasDestePais(String pais) {
+    public ArrayList<ModeloMontanha> ListaTodasMontanhasDeUmPais(String pais){
         //busca no DBpedia todas as montanhas deste país
         ArrayList<ModeloMontanha> lista = new ArrayList<>();
         for (BindingSet bs : dao.buscaMontanhasDestePais(pais)) {
             String nomeMontanha = ((IRI) bs.getValue("Montanha")).getLocalName();//retorna o nome
             double elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
             String linkMontanha = bs.getValue("Montanha").stringValue();//retorna o link da montanha
-            try{
+            try {
                 lista.add(new ModeloMontanha(nomeMontanha, elevacao, linkMontanha));
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("Deu errado na inserção da lista");
             }
         }
         return lista;
     }
-    
- 
+
     
     
 }

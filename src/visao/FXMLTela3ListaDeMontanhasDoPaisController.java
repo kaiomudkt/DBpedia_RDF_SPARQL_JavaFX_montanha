@@ -17,8 +17,12 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import controle.ControleTela3;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
+import javafx.scene.control.cell.PropertyValueFactory;
 import modelo.ModeloMontanha;
+import controle.Auxilar;
 
 public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable {
 
@@ -28,21 +32,28 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
     private Button buttonBuscar;
 
     @FXML
-    private TableColumn<?, ?> columnLocalizacao;
+    private TableColumn<ModeloMontanha, String> columnLocalizacao;
 
     @FXML
-    private TableView<?> tabelaMontanhas;
+    private TableView<ModeloMontanha> tabelaMontanhas;
 
     @FXML
-    private TableColumn<?, ?> columnMontanha;
+    private TableColumn<ModeloMontanha, String> columnMontanha;
 
     @FXML
-    private TableColumn<?, ?> columnElevacao;
+    private TableColumn<ModeloMontanha, String> columnElevacao;
+    
+    private ObservableList<ModeloMontanha> obsTableList;
+    private ArrayList<ModeloMontanha> montanhas;
+    
+    
 
     /**
-     * método acionado pelo o evento do clique no botão "buttonBuscar", pega o
-     * item selecionado no
+     * método acionado pelo o evento do clique no botão "buttonBuscar", pega a
+     * linha selecionada na tabela, ou seja, o nome da montanha, e envia como
+     * parâmetro do método responsaval preenchar a tela4.
      *
+     * Chama a proxíma tela4, e fecha a atual tela3.
      *
      * @param event
      */
@@ -52,9 +63,11 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
         try {
             ModeloMontanha montanha = (ModeloMontanha) tabelaMontanhas.getSelectionModel().getSelectedItem();
             System.out.println(montanha.getNome());
-            
+            //TODO
+
+            //falta enviar o objeto montanha para a proxima tela saber preencher a tabela
         } catch (Exception e) {
-            System.out.println("OBJETO NULO, SELECIONA ALGUM ITEM DA TABELA");
+            System.out.println("OBJETO NULO, SELECIONA ALGUM ITEM DA TABELA (tela3)");
         }
 
         //chama a quarta tela
@@ -74,8 +87,18 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        new ControleTela3().ListaTodasMontanhasDeUmPais(Auxilar.auxilar);
         //chama metodo que inicializar toda a tabela
+        inicializarTabela();
+    }
+
+    public void inicializarTabela() {
+        columnMontanha.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        columnElevacao.setCellValueFactory(new PropertyValueFactory<>("Elevação"));
+        columnLocalizacao.setCellValueFactory(new PropertyValueFactory<>("Localização"));
+        obsTableList = FXCollections.observableArrayList(montanhas);
+        tabelaMontanhas.setItems(obsTableList);
+
     }
 
 }

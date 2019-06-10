@@ -16,6 +16,7 @@ public class ModeloPais {
     private int qtdMontanhas;
     private String continente;
     private ArrayList listaMontanhas;
+    private String link;
 
     public ModeloPais(String nome) {
         this.nome = nome;
@@ -53,6 +54,14 @@ public class ModeloPais {
 
     public void setListaMontanhas(ArrayList listaMontanhas) {
         this.listaMontanhas = listaMontanhas;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
     
     

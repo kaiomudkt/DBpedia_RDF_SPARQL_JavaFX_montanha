@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import controle.Auxilar;
 
 public class FXMLTela2ListaPaisesDoContinenteController implements Initializable {
 
@@ -43,15 +44,24 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
 //        }
     }
 
+    /**
+     * Este método acionado pelo evento do clique do botão, 
+     * pega a linha da tabela que esta selecionado, 
+     * ou seja, qual país,
+     * e o passa como parametro
+     * para o metodo que busca no DBpedia.
+     *
+     * Este método ainda, manda inicializar a proxima tela3, e manda fechar essa
+     * atual tela2.
+     *
+     * @param event
+     */
     @FXML
     void buttonBuscaMontanhasDestePais(ActionEvent event) {
-
         try {
             //pega linha da tabela selecionado
             ModeloPais pais = (ModeloPais) tabelaPaises.getSelectionModel().getSelectedItem();
-            //chama a proxima tela dandos os parametros que ela precisa
-            //new ControleTela3().criaChamaTela4(pais.getNome());
-            new ControleTela3().buscaMontanhasDestePais("japan");
+            Auxilar.auxilar = pais.get;
             //chama a terceira tela
             Stage stage = new Stage();
             Parent root = null;
