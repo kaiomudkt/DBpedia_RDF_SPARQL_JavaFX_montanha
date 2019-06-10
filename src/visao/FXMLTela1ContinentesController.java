@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.Initializable;
 
-public class FXMLTela1ContinentesController implements Initializable{
+public class FXMLTela1ContinentesController implements Initializable {
 
     @FXML
     private ToggleGroup grupoRadioContinentes;
@@ -40,11 +40,10 @@ public class FXMLTela1ContinentesController implements Initializable{
     private RadioButton america;
 
     public static RadioButton paisSelecionado;
-    
-        @FXML
+
+    @FXML
     void pegarPaisSelecionado() throws IOException {//tirei (ActionEvent event)
         //passa qual pais foi chamado
-        //inicia a variavel static (paisSelecionado)
         paisSelecionado = (RadioButton) grupoRadioContinentes.getSelectedToggle();//pega o radioButton selecionado
         System.out.println(paisSelecionado.getText());
 
@@ -59,7 +58,7 @@ public class FXMLTela1ContinentesController implements Initializable{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-       //fecha essa tela1 atual
+        //fecha essa tela1 atual
         buscarContinente.getScene().getWindow().hide();
     }
 
@@ -67,5 +66,5 @@ public class FXMLTela1ContinentesController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    
+
 }

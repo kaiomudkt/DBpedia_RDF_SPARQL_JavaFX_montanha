@@ -5,10 +5,19 @@
  */
 package controle;
 
+import com.sun.javaws.Main;
 import java.util.LinkedList;
 import modelo.ModeloMontanha;
 import dao.ObjetoDeAcessoAosDados;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -31,6 +40,7 @@ public class ControleTela3 {
      * (linkedList)
      */
     public ArrayList<ModeloMontanha> buscaMontanhasDestePais(String pais) {
+        //busca no DBpedia todas as montanhas deste país
         ArrayList<ModeloMontanha> lista = new ArrayList<>();
         for (BindingSet bs : dao.buscaMontanhasDestePais(pais)) {
             String nomeMontanha = ((IRI) bs.getValue("Montanha")).getLocalName();//retorna o nome
@@ -44,4 +54,8 @@ public class ControleTela3 {
         }
         return lista;
     }
+    
+ 
+    
+    
 }

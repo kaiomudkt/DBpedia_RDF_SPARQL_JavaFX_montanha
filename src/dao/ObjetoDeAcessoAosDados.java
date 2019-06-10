@@ -88,4 +88,22 @@ public class ObjetoDeAcessoAosDados {
     }
     
     
+    public List<BindingSet> listaPaisesDeUmContinente(){
+    Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
+        repo.init();
+        try (RepositoryConnection conn = repo.getConnection()) {
+            String queryString = getPrefixes();
+            queryString += "select ?Pais where { ";
+            queryString += " ?Pais dct:subject  dbc:Countries_in_Asia . ";
+            queryString += "}";
+            TupleQuery query = conn.prepareTupleQuery(queryString);
+            try (TupleQueryResult result = query.evaluate()) {
+                return QueryResults.asList(result);
+            }
+        } finally {
+            repo.shutDown();
+        }
+    }
+    
+    
 }//fim 

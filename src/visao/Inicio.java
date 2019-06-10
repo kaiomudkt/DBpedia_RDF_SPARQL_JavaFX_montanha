@@ -5,11 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import controle.ControleTela3;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
-public class DBpedia_SPARQL_RDF_Montanha extends Application {
+public class Inicio extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
