@@ -87,15 +87,15 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        new ControleTela3().ListaTodasMontanhasDeUmPais(Auxilar.auxilar);
+        montanhas = new ControleTela3().ListaTodasMontanhasDeUmPais(Auxilar.auxilar);
         //chama metodo que inicializar toda a tabela
         inicializarTabela();
     }
 
     public void inicializarTabela() {
         columnMontanha.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        columnElevacao.setCellValueFactory(new PropertyValueFactory<>("Elevação"));
-        columnLocalizacao.setCellValueFactory(new PropertyValueFactory<>("Localização"));
+        columnElevacao.setCellValueFactory(new PropertyValueFactory<>("elevacao"));
+        columnLocalizacao.setCellValueFactory(new PropertyValueFactory<>("areaLocalizacao"));
         obsTableList = FXCollections.observableArrayList(montanhas);
         tabelaMontanhas.setItems(obsTableList);
 

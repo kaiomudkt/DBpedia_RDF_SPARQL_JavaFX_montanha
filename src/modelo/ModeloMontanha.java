@@ -36,6 +36,13 @@ public class ModeloMontanha {
         this.elevacao = elevacao;
         this.link = link;
     }
+
+    public ModeloMontanha(String nome, String areaLocalizacao, double elevacao, String link) {
+        this.nome = nome;
+        this.areaLocalizacao = areaLocalizacao;
+        this.elevacao = elevacao;
+        this.link = link;
+    }
     
 
 

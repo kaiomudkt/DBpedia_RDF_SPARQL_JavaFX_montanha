@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import modelo.ModeloPais;
-import controle.ControleTela3;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,7 +60,8 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
         try {
             //pega linha da tabela selecionado
             ModeloPais pais = (ModeloPais) tabelaPaises.getSelectionModel().getSelectedItem();
-            Auxilar.auxilar = pais.get;
+            //TODO
+            //Auxilar.auxilar = pais.getLink();
             //chama a terceira tela
             Stage stage = new Stage();
             Parent root = null;

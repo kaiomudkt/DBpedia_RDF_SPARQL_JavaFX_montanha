@@ -43,11 +43,12 @@ public class ControleTela3 {
         //busca no DBpedia todas as montanhas deste país
         ArrayList<ModeloMontanha> lista = new ArrayList<>();
         for (BindingSet bs : dao.buscaMontanhasDestePais(pais)) {
-            String nomeMontanha = ((IRI) bs.getValue("Montanha")).getLocalName();//retorna o nome
+            String nomeMontanha = ((IRI) bs.getValue("Montanha")).getLocalName();//retorna a Area_Localizada
+            String areaLocalizacao = ((IRI) bs.getValue("Area_Localizada")).getLocalName();//retorna o nome
             double elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
             String linkMontanha = bs.getValue("Montanha").stringValue();//retorna o link da montanha
             try {
-                lista.add(new ModeloMontanha(nomeMontanha, elevacao, linkMontanha));
+                lista.add(new ModeloMontanha(nomeMontanha, areaLocalizacao, elevacao, linkMontanha));
             } catch (Exception e) {
                 System.out.println("Deu errado na inserção da lista");
             }
