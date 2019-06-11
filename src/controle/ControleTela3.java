@@ -37,6 +37,7 @@ public class ControleTela3 {
             String areaLocalizacao = ((IRI) bs.getValue("Area_Localizada")).getLocalName();//retorna o nome
             double elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
             String linkMontanha = bs.getValue("Montanha").stringValue();//retorna o link da montanha
+            System.out.println("link: "+linkMontanha);
             try {
                 lista.add(new ModeloMontanha(nomeMontanha, areaLocalizacao, elevacao, linkMontanha));
             } catch (Exception e) {

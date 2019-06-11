@@ -1,6 +1,6 @@
 package visao;
 
-import com.sun.javaws.Main;
+//import com.sun.javaws.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.Initializable;
+import sun.applet.Main;
+import controle.Auxilar;
 
 public class FXMLTela1ContinentesController implements Initializable {
 
@@ -38,14 +40,16 @@ public class FXMLTela1ContinentesController implements Initializable {
 
     @FXML
     private RadioButton america;
-
-    public static RadioButton paisSelecionado;
+        
+    public static RadioButton continenteSelecionado;
 
     @FXML
     void pegarPaisSelecionado() throws IOException {//tirei (ActionEvent event)
         //passa qual pais foi chamado
-        paisSelecionado = (RadioButton) grupoRadioContinentes.getSelectedToggle();//pega o radioButton selecionado
-        System.out.println(paisSelecionado.getText());
+        continenteSelecionado = (RadioButton) grupoRadioContinentes.getSelectedToggle();//pega o radioButton selecionado
+        Auxilar.auxilar = continenteSelecionado.getId();
+        
+        System.out.println(continenteSelecionado.getId());
 
         //chama a segunda tela2
         Stage stage = new Stage();

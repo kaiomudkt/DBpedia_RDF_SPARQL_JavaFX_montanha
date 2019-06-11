@@ -1,6 +1,6 @@
 package visao;
 
-import com.sun.javaws.Main;
+//import com.sun.javaws.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,20 +18,30 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import controle.Auxilar;
+import controle.ControleTela2;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+import sun.applet.Main;
 
 public class FXMLTela2ListaPaisesDoContinenteController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> colunaNomePais;
+    private TableColumn<ModeloPais,String> colunaNomePais;
 
     @FXML
-    private TableColumn<?, ?> colunaQTDMontanhas;
+    private TableColumn<ModeloPais,String> colunaQTDMontanhas;
 
     @FXML
-    private TableView<?> tabelaPaises;
+    private TableView<ModeloPais> tabelaPaises;
 
     @FXML
     private Button buttonBuscarMontanhasDestePais;
+    
+    private ArrayList<ModeloPais> paises;
+    
+    private ObservableList<ModeloPais> obsTableList;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -41,6 +51,9 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
 //        for (Object lista : new ControleTela3().buscaMontanhasDestePais("japan")) {
 //            System.out.println(lista);
 //        }
+        paises = new ControleTela2().listaTodosPaisesDoContinente(Auxilar.auxilar);
+        //chama metodo que inicializar toda a tabela
+        inicializarTabela();
     }
 
     /**
@@ -80,5 +93,9 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
         }
 
     }
-
+     public void inicializarTabela() {
+        colunaNomePais.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        obsTableList = FXCollections.observableArrayList(paises);
+        tabelaPaises.setItems(obsTableList);
+    }
 }

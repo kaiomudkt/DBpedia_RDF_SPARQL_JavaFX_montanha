@@ -1,6 +1,6 @@
 package visao;
 
-import com.sun.javaws.Main;
+//import com.sun.javaws.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modelo.ModeloMontanha;
 import controle.Auxilar;
+import sun.applet.Main;
 
 public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable {
 
@@ -98,7 +99,6 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
         columnLocalizacao.setCellValueFactory(new PropertyValueFactory<>("areaLocalizacao"));
         obsTableList = FXCollections.observableArrayList(montanhas);
         tabelaMontanhas.setItems(obsTableList);
-
     }
 
 }

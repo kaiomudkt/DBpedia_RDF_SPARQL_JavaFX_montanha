@@ -75,7 +75,7 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:mountainRange ?Lugar .";
-            queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/Japan> .";//static
+            queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/"+pais+"> .";//static
             //queryString += " ?Lugar  dbo:country "+pais+" .";//dinamico
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
@@ -88,22 +88,6 @@ public class ObjetoDeAcessoAosDados {
     }
     
     
-    public List<BindingSet> listaPaisesDeUmContinente(){
-    Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
-        repo.init();
-        try (RepositoryConnection conn = repo.getConnection()) {
-            String queryString = getPrefixes();
-            queryString += "select ?Pais where { ";
-            queryString += " ?Pais dct:subject  dbc:Countries_in_Asia . ";
-            queryString += "}";
-            TupleQuery query = conn.prepareTupleQuery(queryString);
-            try (TupleQueryResult result = query.evaluate()) {
-                return QueryResults.asList(result);
-            }
-        } finally {
-            repo.shutDown();
-        }
-    }
     
     /**
      * cria uma lista de todas as montanhas de um continente
@@ -119,6 +103,34 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:locatedInArea ?Pais.";
             queryString += " ?Continente skos:broader dbc:Countries_in_Asia.";
+            queryString += " ?Pais rdfs:label  ?nome .";
+            queryString += " FILTER(lang(?nome) = 'en')";
+            queryString += "}";
+            TupleQuery query = conn.prepareTupleQuery(queryString);
+            try (TupleQueryResult result = query.evaluate()) {
+                return QueryResults.asList(result);
+            }
+        } finally {
+            repo.shutDown();
+        }
+    }
+    
+    
+    
+    
+    /**
+     * Lista todos os paises de um continente
+     * @param continente
+     * @return 
+     */
+    public List<BindingSet> listaTodosPaisesDoContinente(String continente) {
+        Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
+        repo.init();
+        try (RepositoryConnection conn = repo.getConnection()) {
+            String queryString = getPrefixes();
+            queryString += "select ?Pais where { ";        //NAO ESQUECER the_americas
+            queryString += " ?Pais dct:subject  dbc:Countries_in_"+continente+" . ";
+            queryString += " ?Pais rdf:type dbo:Country .";
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {
