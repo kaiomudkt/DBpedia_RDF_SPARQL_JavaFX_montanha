@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,14 +9,26 @@
 
 <AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela3ListaDeMontanhasDoPaisController">
    <children>
-      <TableView fx:id="tabelaMontanhas" layoutX="-2.0" layoutY="75.0" prefHeight="500.0" prefWidth="782.0">
+      <TableView fx:id="tabelaMontanhas" layoutX="-2.0" layoutY="117.0" prefHeight="458.0" prefWidth="782.0">
         <columns>
           <TableColumn fx:id="columnMontanha" prefWidth="290.0" text="Montanha" />
           <TableColumn fx:id="columnElevacao" prefWidth="135.0" text="Elevacao" />
             <TableColumn fx:id="columnLocalizacao" prefWidth="356.0" text="Localização" />
         </columns>
       </TableView>
-      <Label layoutX="17.0" layoutY="6.0" prefHeight="69.0" prefWidth="425.0" text="Selecione a montanha que deseja ver a comparação de sua elevação e o desvio padrão da elevação das outras montanhas" wrapText="true" />
-      <Button fx:id="buttonBuscar" layoutX="504.0" layoutY="28.0" mnemonicParsing="false" onAction="#buttonTela4DesvioPadrao" text="Buscar" />
+      <Label layoutX="196.0" layoutY="53.0" prefHeight="42.0" prefWidth="337.0" text="Selecione a montanha:" wrapText="true">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <Button fx:id="buttonBuscar" layoutX="675.0" layoutY="28.0" mnemonicParsing="false" onAction="#buttonTela4DesvioPadrao" text="Proximo" />
+      <Label layoutX="153.0" layoutY="11.0" text="Pais:">
+         <font>
+            <Font size="28.0" />
+         </font></Label>
+      <Label fx:id="labelPais" layoutX="243.0" layoutY="11.0" prefHeight="34.0" prefWidth="411.0" text="pais">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" text="Anterior" />
    </children>
 </AnchorPane>

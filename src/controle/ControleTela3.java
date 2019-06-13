@@ -29,10 +29,14 @@ public class ControleTela3 {
      * recebe uma lista do tipo (List<BindingSet>) e transforma em uma
      * (linkedList)
      */
-    public ArrayList<ModeloMontanha> ListaTodasMontanhasDeUmPais(String pais){
+    public ArrayList<ModeloMontanha> ListaTodasMontanhasDeUmPais(String linkPais){
+        System.out.println(" #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$");
+        System.out.println(" #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$");
+        System.out.println(" #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$");
+        System.out.println(" #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$");
         //busca no DBpedia todas as montanhas deste país
         ArrayList<ModeloMontanha> lista = new ArrayList<>();
-        for (BindingSet bs : dao.buscaMontanhasDestePais(pais)) {
+        for (BindingSet bs : dao.buscaMontanhasDestePais(linkPais)) {
             String nomeMontanha = ((IRI) bs.getValue("Montanha")).getLocalName();//retorna a Area_Localizada
             String areaLocalizacao = ((IRI) bs.getValue("Area_Localizada")).getLocalName();//retorna o nome
             double elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();

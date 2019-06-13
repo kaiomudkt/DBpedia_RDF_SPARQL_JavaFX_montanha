@@ -64,7 +64,7 @@ public class ObjetoDeAcessoAosDados {
      * @param pais
      * @return
      */
-    public List<BindingSet> buscaMontanhasDestePais(String pais) {
+    public List<BindingSet> buscaMontanhasDestePais(String linkPais) {
         Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
@@ -75,8 +75,8 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:mountainRange ?Lugar .";
-            queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/"+pais+"> .";//static
-            //queryString += " ?Lugar  dbo:country "+pais+" .";//dinamico
+            //queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/"+pais+"> .";//static
+            queryString += " ?Lugar  dbo:country <"+linkPais+"> .";//dinamico
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {
@@ -124,6 +124,7 @@ public class ObjetoDeAcessoAosDados {
      * @return 
      */
     public List<BindingSet> listaTodosPaisesDoContinente(String continente) {
+        System.out.println("DAO, continente: "+continente);
         Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {

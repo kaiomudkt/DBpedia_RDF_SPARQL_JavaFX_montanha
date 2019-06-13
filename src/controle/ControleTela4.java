@@ -1,7 +1,6 @@
 package controle;
 
 import dao.ObjetoDeAcessoAosDados;
-import java.util.ArrayList;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.query.BindingSet;
 
@@ -21,13 +20,15 @@ public class ControleTela4 {
         //calcula desvio padrao com todas as elevações desta lista
         //
         double elevacao = 0;
+        int contador = 1;
         ObjetoDeAcessoAosDados dao = new ObjetoDeAcessoAosDados();
         for (BindingSet bs : dao.consultaListaMontanhasDeDeterminadoContinente(continente)) {
             elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
             System.out.println("Elevacao: " + elevacao);
             desvioPadraoLista += elevacao;//nem sei como calcula isso KKKK
+            contador++;
         }
-        return desvioPadraoLista;
+        return desvioPadraoLista/contador;
     }
     
 }

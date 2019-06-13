@@ -16,8 +16,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import controle.Auxilar;
+import controle.Auxiliar;
 import sun.applet.Main;
+import controle.Auxiliar;
 
 public class FXMLTela4DesvioPadraoController implements Initializable{
 
@@ -59,10 +60,10 @@ public class FXMLTela4DesvioPadraoController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         ControleTela4 controle = new ControleTela4();
         
-        String desvioP = String.valueOf(controle.desvioPadrao(new Auxilar().auxilar));
+        String desvioP = String.valueOf(controle.desvioPadrao(Auxiliar.continenteSelecionado));
         labelValorDesvioPadrao.setText(desvioP);
         //TODO
-        labelNomeContinente.setText(new Auxilar().auxilar);
+        labelNomeContinente.setText(Auxiliar.continenteSelecionado);
     }
 
 }

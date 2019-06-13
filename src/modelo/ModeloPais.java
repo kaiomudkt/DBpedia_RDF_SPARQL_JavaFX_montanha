@@ -18,10 +18,14 @@ public class ModeloPais {
     private ArrayList listaMontanhas;
     private String link;
 
-    public ModeloPais(String nome) {
+    public ModeloPais(String nome, int qtdMontanhas, String continente, String link) {
         this.nome = nome;
+        this.qtdMontanhas = qtdMontanhas;
+        this.continente = continente;
+        //this.listaMontanhas = listaMontanhas;
+        this.link = link;
     }
-    
+
     
 
     public String getNome() {

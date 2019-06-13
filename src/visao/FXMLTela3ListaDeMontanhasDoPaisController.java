@@ -22,7 +22,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modelo.ModeloMontanha;
-import controle.Auxilar;
+import controle.Auxiliar;
+import javafx.scene.control.Label;
 import sun.applet.Main;
 
 public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable {
@@ -42,12 +43,13 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
     private TableColumn<ModeloMontanha, String> columnMontanha;
 
     @FXML
+    private Label labelPais;
+
+    @FXML
     private TableColumn<ModeloMontanha, String> columnElevacao;
-    
+
     private ObservableList<ModeloMontanha> obsTableList;
     private ArrayList<ModeloMontanha> montanhas;
-    
-    
 
     /**
      * método acionado pelo o evento do clique no botão "buttonBuscar", pega a
@@ -63,7 +65,7 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
         //pega conteudo selecionado na tabela
         try {
             ModeloMontanha montanha = (ModeloMontanha) tabelaMontanhas.getSelectionModel().getSelectedItem();
-            System.out.println(montanha.getNome());
+            System.out.println("Tela 3 montanha.getNome() " + montanha.getNome());
             //TODO
 
             //falta enviar o objeto montanha para a proxima tela saber preencher a tabela
@@ -88,7 +90,10 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        montanhas = new ControleTela3().ListaTodasMontanhasDeUmPais(Auxilar.auxilar);
+        //System.out.println("Auxiliar.pais.getNome(): "+Auxiliar.pais.getNome());
+        labelPais.setText(Auxiliar.pais.getNome());
+        //System.out.println("initialize() Tela Auxilar.auxilar, pais: " + Auxiliar.pais.getNome());
+        montanhas = new ControleTela3().ListaTodasMontanhasDeUmPais(Auxiliar.pais.getLink());
         //chama metodo que inicializar toda a tabela
         inicializarTabela();
     }

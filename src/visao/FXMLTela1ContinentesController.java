@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.Initializable;
 import sun.applet.Main;
-import controle.Auxilar;
+import controle.Auxiliar;
 
 public class FXMLTela1ContinentesController implements Initializable {
 
@@ -47,8 +47,9 @@ public class FXMLTela1ContinentesController implements Initializable {
     void pegarPaisSelecionado() throws IOException {//tirei (ActionEvent event)
         //passa qual pais foi chamado
         continenteSelecionado = (RadioButton) grupoRadioContinentes.getSelectedToggle();//pega o radioButton selecionado
-        Auxilar.auxilar = continenteSelecionado.getId();
-        
+        Auxiliar.continenteSelecionado = continenteSelecionado.getId();
+        System.out.println("Tela 1 Auxilar.auxilar: "+Auxiliar.continenteSelecionado);
+
         System.out.println(continenteSelecionado.getId());
 
         //chama a segunda tela2
