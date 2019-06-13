@@ -19,28 +19,29 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import modelo.ModeloMontanha;
 import sun.applet.Main;
+
 public class FXMLTela5ListaMontanhasDoMundoController implements Initializable {
 
     @FXML
     private TableColumn<ModeloMontanha, String> columnLocalizacao;
-
     @FXML
     private Button buttonVoltar;
     @FXML
+    private Label qtdMontanhas;
+    @FXML
     private TableView<ModeloMontanha> tabelaMontanhas;
-
     @FXML
     private TableColumn<ModeloMontanha, String> columnMontanha;
     private ObservableList<ModeloMontanha> obsTableList;
     @FXML
     private TableColumn<ModeloMontanha, String> columnElevacao;
     private ArrayList<ModeloMontanha> listaMontanhasMundo;
-
     @FXML
     void buttonVoltar(ActionEvent event) {
 //chama a zero tela
@@ -67,15 +68,14 @@ public class FXMLTela5ListaMontanhasDoMundoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if(Auxiliar.listaMontanhasDoMundo == null){
+        if (Auxiliar.listaMontanhasDoMundo == null) {
             this.listaMontanhasMundo = new ControleTela5().listaTodasMontanhasDoMundo();
             Auxiliar.listaMontanhasDoMundo = this.listaMontanhasMundo;
-        }else{
+        } else {
             this.listaMontanhasMundo = Auxiliar.listaMontanhasDoMundo;
         }
-        
+        qtdMontanhas.setText(Integer.toString(this.listaMontanhasMundo.size()));
         inicializarTabela();
-
     }
 
 }
