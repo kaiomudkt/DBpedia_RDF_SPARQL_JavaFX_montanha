@@ -19,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -69,6 +70,11 @@ public class FXMLTela5ListaMontanhasDoMundoController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (Auxiliar.listaMontanhasDoMundo == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Aviso");
+            alert.setHeaderText("Espere a consulta!");
+            //alert.setContentText("I have a great message for you!");
+            alert.showAndWait();
             this.listaMontanhasMundo = new ControleTela5().listaTodasMontanhasDoMundo();
             Auxiliar.listaMontanhasDoMundo = this.listaMontanhasMundo;
         } else {
