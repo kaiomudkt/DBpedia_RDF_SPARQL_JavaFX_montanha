@@ -23,12 +23,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modelo.ModeloMontanha;
 import controle.Auxiliar;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import sun.applet.Main;
 
 public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable {
 
     ControleTela3 controle;
+
+    @FXML
+    private Button buttonVoltaTela2;
 
     @FXML
     private Button buttonBuscar;
@@ -69,23 +73,27 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
             //TODO
 
             //falta enviar o objeto montanha para a proxima tela saber preencher a tabela
-        } catch (Exception e) {
-            System.out.println("OBJETO NULO, SELECIONA ALGUM ITEM DA TABELA (tela3)");
-        }
+            //chama a quarta tela
+            Stage stage = new Stage();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("FXMLTela4DesvioPadrao.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            //fecha essa tela3 atual
+            buttonBuscar.getScene().getWindow().hide();
 
-        //chama a quarta tela
-        Stage stage = new Stage();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("FXMLTela4DesvioPadrao.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Aviso");
+            alert.setHeaderText("Selecione uma montanha!");
+            //alert.setContentText("I have a great message for you!");
+            alert.showAndWait();
         }
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        //fecha essa tela3 atual
-        buttonBuscar.getScene().getWindow().hide();
     }
 
     @Override
@@ -104,6 +112,22 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
         columnLocalizacao.setCellValueFactory(new PropertyValueFactory<>("areaLocalizacao"));
         obsTableList = FXCollections.observableArrayList(montanhas);
         tabelaMontanhas.setItems(obsTableList);
+    }
+
+    @FXML
+    void buttonVoltaTela2(ActionEvent event) {
+        //chama a primeira tela
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("FXMLTela2ListaPaisesDoContinente.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        buttonVoltaTela2.getScene().getWindow().hide();
     }
 
 }

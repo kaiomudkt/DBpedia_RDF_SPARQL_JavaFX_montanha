@@ -22,6 +22,8 @@ import controle.ControleTela2;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sun.applet.Main;
@@ -32,6 +34,8 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
     private TableColumn<ModeloPais, String> colunaNomePais;
     @FXML
     private TableColumn<ModeloPais, String> colunaLink;
+    @FXML
+    private Button buttonVoltaPraTela1;
     @FXML
     private TableColumn<ModeloPais, String> colunaQTDMontanhas;
     @FXML
@@ -47,7 +51,7 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //labelContinenteSelecionado.setText(Auxiliar.continenteSelecionado);
+        labelContinenteSelecionado.setText(Auxiliar.continenteSelecionado);
         System.out.println("Tela2, continente a ser consultado: " + Auxiliar.continenteSelecionado);
         paises = new ControleTela2().listaTodosPaisesDoContinente(Auxiliar.continenteSelecionado);
         //chama metodo que inicializar toda a tabela
@@ -88,9 +92,12 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
             //e fecha essa atual tela2
             buttonBuscarMontanhasDestePais.getScene().getWindow().hide();
         } catch (Exception e) {
-            System.out.println("Não foi selecionado uma linha da tabela (tela2)");
-            System.out.println("Não foi selecionado uma linha da tabela (tela2)");
-            System.out.println("Não foi selecionado uma linha da tabela (tela2)");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Aviso");
+            alert.setHeaderText("Selecione um país!");
+            //alert.setContentText("I have a great message for you!");
+            alert.showAndWait();
+
         }
 
     }
@@ -101,5 +108,21 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
         colunaLink.setCellValueFactory(new PropertyValueFactory<>("link"));
         obsTableList = FXCollections.observableArrayList(paises);
         tabelaPaises.setItems(obsTableList);
+    }
+
+    @FXML
+    void buttonVoltaPraTela1(ActionEvent event) {
+        //chama a primeira tela
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("FXMLTela1Continentes.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        buttonVoltaPraTela1.getScene().getWindow().hide();
     }
 }

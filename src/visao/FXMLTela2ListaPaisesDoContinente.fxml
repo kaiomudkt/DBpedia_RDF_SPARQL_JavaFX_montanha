@@ -21,7 +21,7 @@
             <Font size="28.0" />
          </font></Label>
       <Button fx:id="buttonBuscarMontanhasDestePais" layoutX="571.0" layoutY="39.0" mnemonicParsing="false" onAction="#buttonBuscaMontanhasDestePais" prefHeight="32.0" prefWidth="124.0" text="Proximo" />
-      <Button layoutX="14.0" layoutY="39.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" text="Anterior" />
+      <Button fx:id="buttonVoltaPraTela1" layoutX="14.0" layoutY="39.0" mnemonicParsing="false" onAction="#buttonVoltaPraTela1" prefHeight="32.0" prefWidth="110.0" text="Anterior" />
       <Label layoutX="197.0" layoutY="32.0" text="Continente:" />
       <Label fx:id="labelContinenteSelecionado" layoutX="296.0" layoutY="32.0" text="contSeleci" />
    </children>
