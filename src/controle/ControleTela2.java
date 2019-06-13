@@ -25,7 +25,7 @@ public class ControleTela2 {
         for (BindingSet bs : dao.listaTodosPaisesDoContinente(continente)){
             String nomePais = ((IRI) bs.getValue("Pais")).getLocalName();//retorna a Area_Localizada
             String link = bs.getValue("Pais").stringValue();//retorna a Area_Localizada
-            System.out.println("Link do pais: "+link);
+            //System.out.println("Link do pais: "+link);
             int qtdMontanhas = 0;
             try {
                 lista.add(new ModeloPais(nomePais, qtdMontanhas, continente, link));

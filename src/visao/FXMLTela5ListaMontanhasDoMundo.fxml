@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="594.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela5ListaMontanhasDoMundoController">
+   <children>
+      <Button fx:id="buttonVoltar" layoutX="486.0" layoutY="47.0" mnemonicParsing="false" onAction="#buttonVoltar" text="Voltar" />
+      <Label layoutX="149.0" layoutY="43.0" text="Montanhas do mundo">
+         <font>
+            <Font size="28.0" />
+         </font></Label>
+      <TableView fx:id="tabelaMontanhas" layoutY="83.0" prefHeight="512.0" prefWidth="617.0">
+        <columns>
+          <TableColumn fx:id="columnMontanha" prefWidth="230.0" text="Montanha" />
+          <TableColumn fx:id="columnElevacao" minWidth="0.0" prefWidth="136.0" text="Elevação" />
+            <TableColumn fx:id="columnLocalizacao" prefWidth="250.0" text="Localização" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

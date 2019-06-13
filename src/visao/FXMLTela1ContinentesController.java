@@ -17,11 +17,14 @@ import java.util.logging.Logger;
 import javafx.fxml.Initializable;
 import sun.applet.Main;
 import controle.Auxiliar;
+import javafx.event.ActionEvent;
 
 public class FXMLTela1ContinentesController implements Initializable {
 
     @FXML
     private ToggleGroup grupoRadioContinentes;
+    @FXML
+    private Button buttonVoltar;
 
     @FXML
     private RadioButton europa;
@@ -40,18 +43,21 @@ public class FXMLTela1ContinentesController implements Initializable {
 
     @FXML
     private RadioButton america;
-        
-    public static RadioButton continenteSelecionado;
+
+    public RadioButton continenteSelecionado;
 
     @FXML
     void pegarPaisSelecionado() throws IOException {//tirei (ActionEvent event)
+
+//        if (Auxiliar.continenteSelecionado != null) {
+//            Auxiliar.listaPaises = null;
+//        }
         //passa qual pais foi chamado
         continenteSelecionado = (RadioButton) grupoRadioContinentes.getSelectedToggle();//pega o radioButton selecionado
         Auxiliar.continenteSelecionado = continenteSelecionado.getId();
-        System.out.println("Tela 1 Auxilar.auxilar: "+Auxiliar.continenteSelecionado);
 
-        System.out.println(continenteSelecionado.getId());
-
+        //System.out.println("Tela 1 Auxilar.auxilar: "+Auxiliar.continenteSelecionado);
+        // System.out.println(continenteSelecionado.getId());
         //chama a segunda tela2
         Stage stage = new Stage();
         Parent root = null;
@@ -65,6 +71,22 @@ public class FXMLTela1ContinentesController implements Initializable {
         stage.show();
         //fecha essa tela1 atual
         buscarContinente.getScene().getWindow().hide();
+    }
+
+    @FXML
+    void buttonVoltar(ActionEvent event) {
+        //chama a zero tela
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Tela00.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        buttonVoltar.getScene().getWindow().hide();
     }
 
     @Override

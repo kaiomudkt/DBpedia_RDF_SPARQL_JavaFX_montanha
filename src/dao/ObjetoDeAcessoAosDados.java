@@ -120,6 +120,7 @@ public class ObjetoDeAcessoAosDados {
     
     /**
      * Lista todos os paises de um continente
+     * essa consulta retorna todo os paises de um determinado continente
      * @param continente
      * @return 
      */

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="402.0" prefWidth="229.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="visao.Tela00Controller">
+   <children>
+      <Button fx:id="buttonTodasMontanhas" layoutX="40.0" layoutY="32.0" mnemonicParsing="false" onAction="#buttonTodasMontanhas" text="Montanhas do Mundo" />
+      <Button fx:id="buttonDevioPadrao" layoutX="40.0" layoutY="88.0" mnemonicParsing="false" onAction="#buttonDevioPadrao" prefHeight="25.0" prefWidth="159.0" text="Desvio Padrão" />
+   </children>
+</AnchorPane>

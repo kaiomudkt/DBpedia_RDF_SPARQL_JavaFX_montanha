@@ -50,10 +50,11 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        labelContinenteSelecionado.setText(Auxiliar.continenteSelecionado);
-        System.out.println("Tela2, continente a ser consultado: " + Auxiliar.continenteSelecionado);
+
         paises = new ControleTela2().listaTodosPaisesDoContinente(Auxiliar.continenteSelecionado);
+        Auxiliar.listaPaises = paises;
+
+        labelContinenteSelecionado.setText(Auxiliar.continenteSelecionado);
         //chama metodo que inicializar toda a tabela
         inicializarTabela();
     }
