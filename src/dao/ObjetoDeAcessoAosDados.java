@@ -25,7 +25,7 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "SELECT DISTINCT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida WHERE {";
+            queryString += "SELECT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
@@ -69,7 +69,7 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "SELECT DISTINCT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida ?Lugar WHERE {";
+            queryString += "SELECT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida ?Lugar WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
@@ -98,7 +98,7 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "SELECT DISTINCT ?Montanha ?Elevacao ?Pais ?Continente WHERE {";
+            queryString += "SELECT ?Montanha ?Elevacao ?Pais ?Continente WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:locatedInArea ?Pais.";

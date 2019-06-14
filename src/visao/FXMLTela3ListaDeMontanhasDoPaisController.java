@@ -69,10 +69,9 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
         //pega conteudo selecionado na tabela
         try {
             ModeloMontanha montanha = (ModeloMontanha) tabelaMontanhas.getSelectionModel().getSelectedItem();
-            System.out.println("Tela 3 montanha.getNome() " + montanha.getNome());
-            //TODO
+            Auxiliar.montanha = montanha;
+            //System.out.println("Tela 3 montanha.getNome() " + montanha.getNome());
 
-            //falta enviar o objeto montanha para a proxima tela saber preencher a tabela
             //chama a quarta tela
             Stage stage = new Stage();
             Parent root = null;

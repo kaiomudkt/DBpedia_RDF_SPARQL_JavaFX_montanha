@@ -24,7 +24,7 @@ public class ControleTela4 {
         ObjetoDeAcessoAosDados dao = new ObjetoDeAcessoAosDados();
         for (BindingSet bs : dao.consultaListaMontanhasDeDeterminadoContinente(continente)) {
             elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
-            System.out.println("Elevacao: " + elevacao);
+            //System.out.println("Elevacao: " + elevacao);
             desvioPadraoLista += elevacao;//nem sei como calcula isso KKKK
             contador++;
         }

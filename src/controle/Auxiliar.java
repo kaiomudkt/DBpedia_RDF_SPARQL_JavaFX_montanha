@@ -15,9 +15,11 @@ public class Auxiliar {
     //public static String auxilar;
     public static String continenteSelecionado;
     public static ModeloPais pais;
+    public static ModeloMontanha montanha;
     
     public static ArrayList<ModeloMontanha> listaMontanhas;
     public static ArrayList<ModeloMontanha> listaMontanhasDoMundo;
     public static ArrayList<ModeloPais> listaPaises;
+    
     
 }
