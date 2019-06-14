@@ -19,14 +19,16 @@ import javafx.stage.Stage;
 import controle.Auxiliar;
 import sun.applet.Main;
 
-public class FXMLTela4DesvioPadraoController implements Initializable{
+public class FXMLTela4DesvioPadraoController implements Initializable {
 
     @FXML
-    private Label labelValorDesvioPadrao;
-
+    private Label labelValorDesvioPadraoContinente;
+    @FXML
+    private Label labelNomePais;
     @FXML
     private Label labelElevacaoMontEscolhido;
-
+    @FXML
+    private Label labelValorDevisoPadraoPais;
     @FXML
     private Label labelNomeMontanha;
 
@@ -36,11 +38,9 @@ public class FXMLTela4DesvioPadraoController implements Initializable{
     @FXML
     private Button buttonVolta;
 
- 
-
     @FXML
     void buttonVoltaAcao(ActionEvent event) {
-     //chama a primeira tela
+        //chama a primeira tela
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -57,14 +57,19 @@ public class FXMLTela4DesvioPadraoController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ControleTela4 controle = new ControleTela4();
+        
+        labelNomePais.setText(Auxiliar.pais.getNome());
+//        labelValorDevisoPadraoPais.setText(value);
+        
         labelElevacaoMontEscolhido.setText(Double.toString(Auxiliar.montanha.getElevacao()));
         labelNomeMontanha.setText(Auxiliar.montanha.getNome());
-        ControleTela4 controle = new ControleTela4();
-        String desvioP = String.valueOf(controle.desvioPadrao(Auxiliar.continenteSelecionado));
-        labelValorDesvioPadrao.setText(desvioP);
-        //TODO
+        
         labelNomeContinente.setText(Auxiliar.continenteSelecionado);
+        String desvioP = String.valueOf(controle.desvioPadrao(Auxiliar.continenteSelecionado));
+        labelValorDesvioPadraoContinente.setText(desvioP);
+    
+    
     }
 
 }
-
