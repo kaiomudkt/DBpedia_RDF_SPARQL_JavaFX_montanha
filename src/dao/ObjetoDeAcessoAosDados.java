@@ -25,7 +25,7 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "SELECT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida WHERE {";
+            queryString += "SELECT Reduced ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
@@ -69,13 +69,13 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "SELECT ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida ?Lugar WHERE {";
+            queryString += "SELECT Reduced ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida ?Lugar WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:mountainRange ?Lugar .";
-            //queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/"+pais+"> .";//static
+            //queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/"+pais+">BONECO .";//static
             queryString += " ?Lugar  dbo:country <"+linkPais+"> .";//dinamico
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
@@ -98,7 +98,7 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "SELECT ?Montanha ?Elevacao ?Pais ?Continente WHERE {";
+            queryString += "SELECT Reduced ?Montanha ?Elevacao ?Pais ?Continente WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:locatedInArea ?Pais.";
@@ -130,7 +130,7 @@ public class ObjetoDeAcessoAosDados {
         repo.init();
         try (RepositoryConnection conn = repo.getConnection()) {
             String queryString = getPrefixes();
-            queryString += "select ?Pais where { ";        //NAO ESQUECER the_americas
+            queryString += "select Reduced ?Pais where { ";        //NAO ESQUECER the_americas
             queryString += " ?Pais dct:subject  dbc:Countries_in_"+continente+" . ";
             queryString += " ?Pais rdf:type dbo:Country .";
             queryString += "}";
