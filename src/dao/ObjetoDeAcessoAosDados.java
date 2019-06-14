@@ -102,7 +102,7 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Montanha rdf:type dbo:Mountain .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:locatedInArea ?Pais.";
-            queryString += " ?Continente skos:broader dbc:Countries_in_Asia.";
+            queryString += " ?Continente skos:broader dbc:Countries_in_"+continente+".";
             queryString += " ?Pais rdfs:label  ?nome .";
             queryString += " FILTER(lang(?nome) = 'en')";
             queryString += "}";
