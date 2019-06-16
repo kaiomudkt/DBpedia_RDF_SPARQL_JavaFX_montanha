@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import modelo.ModeloPais;
 import org.eclipse.rdf4j.model.vocabulary.FOAF;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.model.vocabulary.RDFS;
@@ -105,6 +106,31 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Continente skos:broader dbc:Countries_in_"+continente+".";
             queryString += " ?Pais rdfs:label  ?nome .";
             queryString += " FILTER(lang(?nome) = 'en')";
+            queryString += "}";
+            TupleQuery query = conn.prepareTupleQuery(queryString);
+            try (TupleQueryResult result = query.evaluate()) {
+                return QueryResults.asList(result);
+            }
+        } finally {
+            repo.shutDown();
+        }
+    }
+    
+    
+    
+       public List<BindingSet> consultaListaMontanhasDeDeterminadoPais(ModeloPais pais) {
+        Repository repo = new SPARQLRepository("http://dbpedia.org/sparql");
+        repo.init();
+        try (RepositoryConnection conn = repo.getConnection()) {
+            String queryString = getPrefixes();
+            queryString += "select ?Elevacao where { ";
+            queryString += "  ?Montanha rdf:type dbo:Mountain .";
+            queryString += "  ?Montanha dbo:elevation ?Elevacao .";
+            queryString += "  ?Montanha dbo:locatedInArea ?Pais .";
+            queryString += "  ?Pais dct:subject ?Continente .";
+            queryString += "  ?Continente skos:broader dbc:Countries_by_continent .";
+            queryString += "  FILTER regex (?Continente, \""+pais.getContinente()+"\") .";
+            queryString += "  FILTER regex(?Pais, \""+pais.getNome()+"\") .";
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {

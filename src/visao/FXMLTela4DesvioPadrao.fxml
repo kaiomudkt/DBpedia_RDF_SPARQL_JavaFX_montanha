@@ -6,13 +6,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="323.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela4DesvioPadraoController">
+<AnchorPane id="AnchorPane" prefHeight="323.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.FXMLTela4DesvioPadraoController">
    <children>
       <Label fx:id="labelNomeContinente" layoutX="14.0" layoutY="43.0" prefHeight="30.0" prefWidth="108.0" text="(continente)" wrapText="true" />
       <Label fx:id="labelValorDesvioPadraoContinente" layoutX="190.0" layoutY="51.0" text="(Valor desvio)" />
       <Label layoutX="219.0" layoutY="190.0" text="Elevação" />
       <Label fx:id="labelNomeMontanha" layoutX="14.0" layoutY="215.0" text="Nome Montanha" />
-      <Button fx:id="buttonVolta" layoutX="112.0" layoutY="267.0" mnemonicParsing="false" onAction="#buttonVoltaAcao" text="Voltar a primeira tela" />
+      <Button fx:id="buttonVolta" layoutX="217.0" layoutY="267.0" mnemonicParsing="false" onAction="#buttonVoltaAcao" text="Voltar a primeira tela" />
       <Label layoutX="190.0" layoutY="21.0" text="Desvio padrao" />
       <Label fx:id="labelElevacaoMontEscolhido" layoutX="219.0" layoutY="214.0" text="Label" />
       <Label layoutX="14.0" layoutY="21.0" text="Continente" />
@@ -21,5 +21,12 @@
       <Label fx:id="labelNomePais" layoutX="14.0" layoutY="140.0" text="nomePais" />
       <Label layoutX="184.0" layoutY="106.0" text="Desvio padrao" />
       <Label fx:id="labelValorDevisoPadraoPais" layoutX="190.0" layoutY="140.0" text="valorDPPais" />
+      <Label layoutX="477.0" layoutY="21.0" text="Media" />
+      <Label layoutX="477.0" layoutY="106.0" text="Media" />
+      <Label layoutX="479.0" layoutY="51.0" text="valorMedia" />
+      <Label layoutX="477.0" layoutY="140.0" text="valorMedia" />
+      <Separator layoutX="12.0" layoutY="79.0" prefHeight="3.0" prefWidth="547.0" />
+      <Separator layoutX="12.0" layoutY="163.0" prefHeight="3.0" prefWidth="547.0" />
+      <Separator layoutX="12.0" layoutY="240.0" prefHeight="3.0" prefWidth="547.0" />
    </children>
 </AnchorPane>

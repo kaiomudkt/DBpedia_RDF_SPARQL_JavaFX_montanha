@@ -66,8 +66,12 @@ public class FXMLTela4DesvioPadraoController implements Initializable {
         labelNomeMontanha.setText(Auxiliar.montanha.getNome());
         
         labelNomeContinente.setText(Auxiliar.continenteSelecionado);
-        String desvioP = String.valueOf(controle.desvioPadrao(Auxiliar.continenteSelecionado));
-        labelValorDesvioPadraoContinente.setText(desvioP);
+        String desvioPadraoContinente = String.valueOf(controle.desvioPadraoContinente(Auxiliar.continenteSelecionado));
+        labelValorDesvioPadraoContinente.setText(desvioPadraoContinente);
+        //TODO
+        //TO DO
+        //String desvioPadraoPais = String.valueOf(controle.desvioPadraoPais(Auxiliar.pais));
+        //labelValorDevisoPadraoPais.setText(desvioPadraoPais);
     
     
     }
