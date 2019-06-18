@@ -36,8 +36,7 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
     private TableColumn<ModeloPais, String> colunaLink;
     @FXML
     private Button buttonVoltaPraTela1;
-    @FXML
-    private TableColumn<ModeloPais, String> colunaQTDMontanhas;
+   
     @FXML
     private TableView<ModeloPais> tabelaPaises;
     @FXML
@@ -105,7 +104,6 @@ public class FXMLTela2ListaPaisesDoContinenteController implements Initializable
 
     public void inicializarTabela() {
         colunaNomePais.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colunaQTDMontanhas.setCellValueFactory(new PropertyValueFactory<>("qtdMontanhas"));
         colunaLink.setCellValueFactory(new PropertyValueFactory<>("link"));
         obsTableList = FXCollections.observableArrayList(paises);
         tabelaPaises.setItems(obsTableList);

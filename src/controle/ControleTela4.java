@@ -2,6 +2,7 @@ package controle;
 
 import dao.ObjetoDeAcessoAosDados;
 import java.util.ArrayList;
+import modelo.ModeloMontanha;
 import modelo.ModeloPais;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -26,13 +27,10 @@ public class ControleTela4 {
         return Desvio.sd(lista);
     }
 
-    public double desvioPadraoPais(ModeloPais pais) {
-        double desvioPadraoLista = 0;
-        double elevacao = 0;
+    public double desvioPadraoPais(ArrayList<ModeloMontanha> montanhas) {
         ArrayList<Integer> lista = new ArrayList<>();
-        for (BindingSet bs : new ObjetoDeAcessoAosDados().consultaListaMontanhasDeDeterminadoPais(pais)) {
-            elevacao = ((Literal) bs.getValue("Elevacao")).doubleValue();
-            lista.add((int) elevacao);
+        for (ModeloMontanha montanha : montanhas) {
+            lista.add((int)montanha.getElevacao());
         }
         return Desvio.sd(lista);
     }

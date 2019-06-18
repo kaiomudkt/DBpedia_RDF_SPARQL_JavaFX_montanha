@@ -8,6 +8,8 @@ package controle;
 import modelo.ModeloMontanha;
 import dao.ObjetoDeAcessoAosDados;
 import java.util.ArrayList;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -44,7 +46,19 @@ public class ControleTela3 {
                 System.out.println("Deu errado na inserção da lista");
             }
         }
+        
         return lista;
+    }
+    
+    
+    
+    public int qtdDeMontanhasDestePais(ArrayList<ModeloMontanha> listaMontanha){
+        TreeSet<String> montanhas = new TreeSet<>();
+        
+        for(ModeloMontanha montanha : listaMontanha){
+            montanhas.add(montanha.getNome());
+        }
+        return montanhas.size();
     }
 
     

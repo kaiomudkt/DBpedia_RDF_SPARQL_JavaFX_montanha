@@ -2,6 +2,7 @@
 package controle;
 
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Desvio {
@@ -47,7 +48,7 @@ public class Desvio {
 		}
 
 		// Step 4:
-		double meanOfDiffs = (double) temp / (double) (table.size());
+		double meanOfDiffs = ((double)temp / (double) (table.size()));
 
 		// Step 5:
 		return Math.sqrt(meanOfDiffs);
@@ -67,6 +68,7 @@ public static void main(String[] args)
 
     }
 
+    
     System.out.println("Media: " +mean(values));
     System.out.printf("Desvio: %.2f\n" ,sd(values));
 }

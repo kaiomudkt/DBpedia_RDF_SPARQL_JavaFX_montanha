@@ -51,6 +51,10 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
 
     @FXML
     private TableColumn<ModeloMontanha, String> columnElevacao;
+   
+    @FXML
+    private Label qtdMontanha;
+    
 
     private ObservableList<ModeloMontanha> obsTableList;
     private ArrayList<ModeloMontanha> montanhas;
@@ -99,8 +103,10 @@ public class FXMLTela3ListaDeMontanhasDoPaisController implements Initializable 
     public void initialize(URL url, ResourceBundle rb) {
         //System.out.println("Auxiliar.pais.getNome(): "+Auxiliar.pais.getNome());
         labelPais.setText(Auxiliar.pais.getNome());
-        //System.out.println("initialize() Tela Auxilar.auxilar, pais: " + Auxiliar.pais.getNome());
         montanhas = new ControleTela3().ListaTodasMontanhasDeUmPais(Auxiliar.pais.getLink());
+        int qtdMontanhas = new ControleTela3().qtdDeMontanhasDestePais(montanhas);
+        qtdMontanha.setText(Integer.toString(qtdMontanhas));
+        Auxiliar.listaMontanhas = montanhas;
         //chama metodo que inicializar toda a tabela
         inicializarTabela();
     }

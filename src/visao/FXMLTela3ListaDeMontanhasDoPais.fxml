@@ -16,7 +16,7 @@
             <TableColumn fx:id="columnLocalizacao" prefWidth="356.0" text="Localização" />
         </columns>
       </TableView>
-      <Label layoutX="196.0" layoutY="53.0" prefHeight="42.0" prefWidth="337.0" text="Selecione a montanha:" wrapText="true">
+      <Label layoutX="194.0" layoutY="75.0" prefHeight="42.0" prefWidth="337.0" text="Selecione a montanha:" wrapText="true">
          <font>
             <Font size="26.0" />
          </font></Label>
@@ -30,5 +30,7 @@
             <Font size="19.0" />
          </font></Label>
       <Button fx:id="buttonVoltaTela2" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#buttonVoltaTela2" text="Anterior" />
+      <Label layoutX="117.0" layoutY="53.0" text="QTD Montanha:" />
+      <Label fx:id="qtdMontanha" layoutX="243.0" layoutY="53.0" text="qtdMont" />
    </children>
 </AnchorPane>

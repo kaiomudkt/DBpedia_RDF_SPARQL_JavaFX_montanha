@@ -11,9 +11,8 @@
    <children>
       <TableView fx:id="tabelaPaises" layoutY="129.0" prefHeight="465.0" prefWidth="729.0">
         <columns>
-          <TableColumn fx:id="colunaNomePais" prefWidth="260.0" text="Países" />
-          <TableColumn fx:id="colunaQTDMontanhas" minWidth="0.0" prefWidth="172.0" text="QTD montanhas" />
-            <TableColumn fx:id="colunaLink" prefWidth="296.0" text="Link" />
+          <TableColumn fx:id="colunaNomePais" prefWidth="364.0" text="Países" />
+            <TableColumn fx:id="colunaLink" prefWidth="364.0" text="Link" />
         </columns>
       </TableView>
       <Label layoutX="209.0" layoutY="89.0" prefHeight="40.0" prefWidth="275.0" text="Selecione um país" textAlignment="CENTER" wrapText="true">

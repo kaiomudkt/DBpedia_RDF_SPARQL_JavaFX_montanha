@@ -2,6 +2,7 @@ package controle;
 
 import dao.ObjetoDeAcessoAosDados;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import modelo.ModeloMontanha;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
@@ -26,5 +27,14 @@ public class ControleTela5 {
             }
         }
         return lista;
+    }
+    
+    public int qtdDeMontanhasDestePais(ArrayList<ModeloMontanha> listaMontanha){
+        TreeSet<String> montanhas = new TreeSet<>();
+        
+        for(ModeloMontanha montanha : listaMontanha){
+            montanhas.add(montanha.getNome());
+        }
+        return montanhas.size();
     }
 }

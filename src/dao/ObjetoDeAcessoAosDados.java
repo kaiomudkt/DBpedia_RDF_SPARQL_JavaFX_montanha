@@ -31,6 +31,7 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
+            queryString += " FILTER (?Elevacao > 300) .";
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {
@@ -72,12 +73,13 @@ public class ObjetoDeAcessoAosDados {
             String queryString = getPrefixes();
             queryString += "SELECT Reduced ?Montanha ?Elevacao ?Area_Localizada ?Ano_Subida ?Lugar WHERE {";
             queryString += " ?Montanha rdf:type dbo:Mountain .";
-            queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
+//            queryString += " ?Montanha dbo:firstAscentYear ?Ano_Subida .";
             queryString += " ?Montanha dbo:locatedInArea ?Area_Localizada .";
             queryString += " ?Montanha dbo:elevation ?Elevacao .";
             queryString += " ?Montanha dbo:mountainRange ?Lugar .";
             //queryString += " ?Lugar  dbo:country <http://dbpedia.org/resource/"+pais+">BONECO .";//static
             queryString += " ?Lugar  dbo:country <"+linkPais+"> .";//dinamico
+            queryString += " FILTER (?Elevacao > 300) .";
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {
@@ -106,6 +108,7 @@ public class ObjetoDeAcessoAosDados {
             queryString += " ?Continente skos:broader dbc:Countries_in_"+continente+".";
             queryString += " ?Pais rdfs:label  ?nome .";
             queryString += " FILTER(lang(?nome) = 'en')";
+            queryString += " FILTER (?Elevacao > 300) .";
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {
@@ -128,9 +131,10 @@ public class ObjetoDeAcessoAosDados {
             queryString += "  ?Montanha dbo:elevation ?Elevacao .";
             queryString += "  ?Montanha dbo:locatedInArea ?Pais .";
             queryString += "  ?Pais dct:subject ?Continente .";
-            queryString += "  ?Continente skos:broader dbc:Countries_by_continent .";
-            queryString += "  FILTER regex (?Continente, \""+pais.getContinente()+"\") .";
+            queryString += "  ?Continente skos:broader dbc:Countries_in_"+pais.getContinente()+ ".";
+//            queryString += "  FILTER regex (?Continente, \""+pais.getContinente()+"\") .";
             queryString += "  FILTER regex(?Pais, \""+pais.getNome()+"\") .";
+            queryString += " FILTER (?Elevacao > 300) .";
             queryString += "}";
             TupleQuery query = conn.prepareTupleQuery(queryString);
             try (TupleQueryResult result = query.evaluate()) {

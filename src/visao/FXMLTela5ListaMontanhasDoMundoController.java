@@ -80,7 +80,8 @@ public class FXMLTela5ListaMontanhasDoMundoController implements Initializable {
         } else {
             this.listaMontanhasMundo = Auxiliar.listaMontanhasDoMundo;
         }
-        qtdMontanhas.setText(Integer.toString(this.listaMontanhasMundo.size()));
+        
+        qtdMontanhas.setText(Integer.toString(new ControleTela5().qtdDeMontanhasDestePais(listaMontanhasMundo)));
         inicializarTabela();
     }
 
